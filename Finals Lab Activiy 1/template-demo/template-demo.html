@@ -1,0 +1,50 @@
+<div class="page">
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="quirky-form">
+
+    <h2>Create Account</h2>
+
+    <input
+      class="input-box"
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      placeholder="Username"
+      required>
+
+    <input
+      class="input-box"
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      placeholder="Email address"
+      required>
+
+    <input
+      class="input-box"
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Password"
+      required
+      minlength="6">
+
+    <select
+      class="input-box"
+      name="role"
+      [(ngModel)]="role"
+      required>
+      <option value="" disabled selected>Select your role</option>
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+      <option value="guest">Guest</option>
+    </select>
+
+    <button
+      class="btn"
+      type="submit"
+      [disabled]="!myForm.form.valid">
+      Submit
+    </button>
+
+  </form>
+</div>
