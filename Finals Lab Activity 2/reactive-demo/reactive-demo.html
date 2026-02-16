@@ -1,0 +1,71 @@
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- Username -->
+    <input class="input" placeholder="Username" formControlName="username"/>
+    @if (isInvalid('username')) {
+      <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+    }
+
+    <!-- Email -->
+    <input class="input" type="email" placeholder="Email" formControlName="email"/>
+    @if (isInvalid('email')) {
+      <small class="error">Enter a valid email</small>
+    }
+
+    <!-- Password -->
+    <input class="input" type="password" placeholder="Password" formControlName="password"/>
+    @if (isInvalid('password')) {
+      <small class="error">Password: 8+ with upper, lower, number</small>
+    }
+
+    <!-- Role -->
+    <select class="input" formControlName="role">
+      @for (r of roles; track r) {
+        <option [value]="r">{{r}}</option>
+      }
+    </select>
+
+    <!-- Gender -->
+    <div class="gender-group">
+      <label><strong>Gender:</strong></label>
+      @for (g of genders; track g) {
+        <label class="radio-label">
+          <input type="radio" [value]="g" formControlName="gender"/>
+          {{g}}
+        </label>
+      }
+    </div>
+
+    @if (isInvalid('gender')) {
+      <small class="error">Please select your gender</small>
+    }
+
+    <!-- Year of Birth -->
+    <select class="input" formControlName="yearOfBirth">
+      <option value="">Select Year of Birth</option>
+      @for (y of years; track y) {
+        <option [value]="y">{{y}}</option>
+      }
+    </select>
+
+    @if (isInvalid('yearOfBirth')) {
+      <small class="error">Please select your birth year</small>
+    }
+
+    @if (isUnderAge) {
+      <small class="error">
+        ⚠ You must be at least 18 years old to register.
+      </small>
+    }
+
+    <!-- Submit Button -->
+    <button
+      class="btn"
+      type="submit"
+      [disabled]="form.invalid || isUnderAge">
+      Submit
+    </button>
+
+  </form>
+</div>
