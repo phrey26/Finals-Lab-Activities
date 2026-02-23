@@ -1,0 +1,77 @@
+/* Full Racing Background */
+.f1-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d0d0d, #1a0000, #330000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Glass Form Card */
+.form-container {
+  width: 420px;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 0 25px rgba(225, 6, 0, 0.6);
+  color: white;
+}
+
+/* Logo */
+.logo-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.f1-title {
+  color: #e10600;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tech-logos {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.css-logo { background: #264de4; color: white; }
+.angular-logo { background: #dd0031; color: white; }
+.material-logo { background: #3f51b5; color: white; }
+
+/* Form Styling */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Radio & Slider text */
+.radio-group,
+.slider-group {
+  color: white;
+  margin: 15px 0;
+}
+
+/* Racing Button */
+.f1-button {
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #e10600, #ff3c00);
+  transition: 0.3s;
+}
+
+.f1-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff0000;
+}

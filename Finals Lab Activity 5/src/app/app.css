@@ -1,0 +1,64 @@
+/* NAV CONTAINER */
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+  border-radius: 12px;
+}
+
+/* Base button style */
+.nav-btn {
+  text-decoration: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* ============================= */
+/* 🏎 F1 THEMED REGISTER BUTTON */
+/* ============================= */
+
+.f1-btn {
+  background: linear-gradient(135deg, #e10600, #9b0000);
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+}
+
+.f1-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(225, 6, 0, 0.6);
+}
+
+/* Active state */
+.f1-btn.active {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ============================= */
+/* ✨ CLEAN MATERIAL DEMO BUTTON */
+/* ============================= */
+
+.mat-btn {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.mat-btn:hover {
+  background: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.mat-btn.active {
+  background: #e3f2fd;
+  border-color: #90caf9;
+  color: #1565c0;
+}
