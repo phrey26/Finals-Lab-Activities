@@ -1,0 +1,98 @@
+<div class="register-background">
+
+  <div class="register-card">
+
+    <!-- Header -->
+    <div class="header">
+      <h2>Create Account</h2>
+      <p class="subtitle">Join the F1 Developer Community</p>
+    </div>
+
+    <!-- FORM START -->
+    <form [formGroup]="formdata"
+          (ngSubmit)="onClickSubmit()"
+          class="form-content">
+
+      <!-- Username -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="userName" placeholder="Enter username">
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput
+               type="email"
+               formControlName="email"
+               placeholder="Enter email">
+        <mat-error *ngIf="formdata.get('email')?.invalid && formdata.get('email')?.touched">
+          Please enter a valid email
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput
+               type="password"
+               formControlName="password"
+               placeholder="Min 8 characters">
+        <mat-error *ngIf="formdata.get('password')?.invalid && formdata.get('password')?.touched">
+          Minimum 8 characters required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Gender (Changed to Radio since you imported MatRadioModule) -->
+      <label class="section-label">Gender</label>
+      <mat-radio-group formControlName="gender" class="radio-group">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+      </mat-radio-group>
+
+      <!-- Address -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput rows="2" formControlName="address"></textarea>
+      </mat-form-field>
+
+      <!-- Birth Date -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Birth Date</mat-label>
+        <input matInput
+               [matDatepicker]="picker"
+               formControlName="birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Angular Skill -->
+      <div class="slider-section">
+        <label>
+          Angular Skill Level:
+          <strong>{{ formdata.get('angularSkillLevel')?.value }}</strong>
+        </label>
+
+        <mat-slider [min]="minSkillLevel"
+                    [max]="maxSkillLevel"
+                    step="1"
+                    discrete>
+          <input matSliderThumb formControlName="angularSkillLevel">
+        </mat-slider>
+      </div>
+
+      <!-- Submit Button -->
+      <button mat-raised-button
+              color="primary"
+              class="full-width submit-btn"
+              type="submit"
+              [disabled]="!formdata.valid">
+        Register
+      </button>
+
+    </form>
+    <!-- FORM END -->
+
+  </div>
+</div>
